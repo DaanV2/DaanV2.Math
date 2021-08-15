@@ -10,7 +10,7 @@ namespace DaanV2.Math {
         /// <param name="Fraction"></param>
         /// <returns></returns>
         public static %Type% Solve(%Type%Fraction Fraction) {
-            return Fraction.Numerator / Fraction.Denominator;
+            return (%Type%)(Fraction.Numerator / Fraction.Denominator);
         }
 
         /// <summary>
@@ -20,7 +20,7 @@ namespace DaanV2.Math {
         /// <param name="B">The second value in the operation</param>
         /// <returns></returns>
         public static %Type%Fraction Multiply(%Type%Fraction A, %Type%Fraction B) {
-            return new %Type%Fraction(A.numerator * B.numerator, A.denominator * B.denominator);
+            return new %Type%Fraction((%Type%)(A.Numerator * B.Numerator), (%Type%)(A.Denominator * B.Denominator));
         }
 
                 /// <summary>
@@ -30,7 +30,7 @@ namespace DaanV2.Math {
         /// <param name="B">The second value in the operation</param>
         /// <returns></returns>
         public static %Type%Fraction Multiply(%Type%Fraction A, %Type% B) {
-            return new %Type%Fraction(A.numerator * B, A.denominator);
+            return new %Type%Fraction((%Type%)(A.Numerator * B), A.Denominator);
         }
 
         /// <summary>
@@ -40,15 +40,15 @@ namespace DaanV2.Math {
         /// <param name="B">The second value in the operation</param>
         /// <returns></returns>
         public static %Type%Fraction Addition(%Type%Fraction A, %Type%Fraction B) {
-            if (A.denominator == B.denominator) {
-                return new %Type%Fraction(A.numerator + B.numerator, A.denominator);
+            if (A.Denominator == B.Denominator) {
+                return new %Type%Fraction((%Type%)(A.Numerator + B.Numerator), A.Denominator);
             }
 
-            %Type% denominator = A.denominator * B.denominator;
-            %Type% numeratorA = A.numerator * B.denominator;
-            %Type% numeratorB = B.numerator * A.denominator;
+            %Type% denominator = (%Type%)(A.Denominator * B.Denominator);
+            %Type% numeratorA = (%Type%)(A.Numerator * B.Denominator);
+            %Type% numeratorB = (%Type%)(B.Numerator * A.Denominator);
             
-            return new %Type%Fraction(numeratorA + numeratorB, denominator);
+            return new %Type%Fraction((%Type%)(numeratorA + numeratorB), denominator);
         }
 
         /// <summary>
@@ -58,15 +58,15 @@ namespace DaanV2.Math {
         /// <param name="B">The second value in the operation</param>
         /// <returns></returns>
         public static %Type%Fraction Addition(%Type%Fraction A, %Type% B) {
-            if (A.denominator == 1) {
-                return new %Type%Fraction(A.numerator + B.numerator, A.denominator);
+            if (A.Denominator == 1) {
+                return new %Type%Fraction((%Type%)(A.Numerator + B), A.Denominator);
             }
 
-            %Type% denominator = A.denominator; //* 1
-            %Type% numeratorA = A.numerator; //* 1
-            %Type% numeratorB = B * A.denominator;
+            %Type% denominator = A.Denominator; //* 1
+            %Type% numeratorA = A.Numerator; //* 1
+            %Type% numeratorB = (%Type%)(B * A.Denominator);
             
-            return new %Type%Fraction(numeratorA + numeratorB, denominator);
+            return new %Type%Fraction((%Type%)(numeratorA + numeratorB), denominator);
         }
 
         /// <summary>
@@ -76,15 +76,15 @@ namespace DaanV2.Math {
         /// <param name="B">The second value in the operation</param>
         /// <returns></returns>
         public static %Type%Fraction Substract(%Type%Fraction A, %Type%Fraction B) {
-            if (A.denominator == B.denominator) {
-                return new %Type%Fraction(A.numerator - B.numerator, A.denominator);
+            if (A.Denominator == B.Denominator) {
+                return new %Type%Fraction((%Type%)(A.Numerator - B.Numerator), A.Denominator);
             }
 
-            %Type% denominator = A.denominator * B.denominator;
-            %Type% numeratorA = A.numerator * B.denominator;
-            %Type% numeratorB = B.numerator * A.denominator;
+            %Type% denominator = (%Type%)(A.Denominator * B.Denominator);
+            %Type% numeratorA = (%Type%)(A.Numerator * B.Denominator);
+            %Type% numeratorB = (%Type%)(B.Numerator * A.Denominator);
             
-            return new %Type%Fraction(numeratorA - numeratorB, denominator);
+            return new %Type%Fraction((%Type%)(numeratorA - numeratorB), denominator);
         }
 
         /// <summary>
@@ -94,15 +94,15 @@ namespace DaanV2.Math {
         /// <param name="B">The second value in the operation</param>
         /// <returns></returns>
         public static %Type%Fraction Substract(%Type%Fraction A, %Type% B) {
-            if (A.denominator == B.denominator) {
-                return new %Type%Fraction(A.numerator - B.numerator, A.denominator);
+            if (A.Denominator == 1) {
+                return new %Type%Fraction((%Type%)(A.Numerator - B), A.Denominator);
             }
 
-            %Type% denominator = A.denominator; //* 1
-            %Type% numeratorA = A.numerato; //* 1
-            %Type% numeratorB = B * A.denominator;
+            %Type% denominator = A.Denominator; //* 1
+            %Type% numeratorA = A.Numerator; //* 1
+            %Type% numeratorB = (%Type%)(B * A.Denominator);
             
-            return new %Type%Fraction(numeratorA - numeratorB, denominator);
+            return new %Type%Fraction((%Type%)(numeratorA - numeratorB), denominator);
         }
 
         /// <summary>
@@ -112,7 +112,7 @@ namespace DaanV2.Math {
         /// <param name="B">The second value in the operation</param>
         /// <returns></returns>
         public static %Type%Fraction Inverse(%Type%Fraction A) {
-            return new %Type%Fraction(A.denominator, A.numerator)
+            return new %Type%Fraction(A.Denominator, A.Numerator);
         }
     }
 }

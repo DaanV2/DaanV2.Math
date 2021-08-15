@@ -23,23 +23,23 @@ namespace DaanV2.Math {
             //  --- / --- = --- * --- 
             //   5     9     5     7  
 
-            return new %Type%Fraction(A.numerator * B.denominator, A.denominator * B.numerator);
+            return new %Type%Fraction((%Type%)(numerator.Numerator * denominator.Denominator), (%Type%)(numerator.Denominator * denominator.Numerator));
         }
         
         /// <summary>Preforms the division operation on the given data:    numerator / denominator = result</summary>
         /// <param name="numerator">The numerator value of the division</param>
         /// <param name="denominator">The denominator of the division</param>
         /// <returns>A fraction representing the division</returns>
-        public static %Type%Fraction Divide(%Type%Fraction A, %Type% B) {
-            return new %Type%Fraction(A.numerator, A.denominator * B);
+        public static %Type%Fraction Divide(%Type%Fraction numerator, %Type% denominator) {
+            return new %Type%Fraction(numerator.Numerator, (%Type%)(numerator.Denominator * denominator));
         }
 
         /// <summary>Preforms the division operation on the given data:    numerator / denominator = result</summary>
         /// <param name="numerator">The numerator value of the division</param>
         /// <param name="denominator">The denominator of the division</param>
         /// <returns>A fraction representing the division</returns>
-        public static %Type%Fraction Divide(%Type% B, %Type%Fraction A) {
-            return new %Type%Fraction(A.denominator * B, A.numerator);
+        public static %Type%Fraction Divide(%Type% numerator, %Type%Fraction denominator) {
+            return new %Type%Fraction((%Type%)(denominator.Denominator * numerator), denominator.Numerator);
         }
     }
 }
