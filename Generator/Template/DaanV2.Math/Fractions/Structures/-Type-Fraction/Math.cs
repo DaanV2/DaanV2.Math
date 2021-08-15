@@ -16,8 +16,8 @@ namespace DaanV2.Math {
         /// <summary>
         /// 
         /// </summary>
-        /// <param name="A"></param>
-        /// <param name="B"></param>
+        /// <param name="A">The first value in the operation</param>
+        /// <param name="B">The second value in the operation</param>
         /// <returns></returns>
         public static %Type%Fraction Multiply(%Type%Fraction A, %Type%Fraction B) {
             return new %Type%Fraction(A.numerator * B.numerator, A.denominator * B.denominator);
@@ -26,8 +26,8 @@ namespace DaanV2.Math {
                 /// <summary>
         /// 
         /// </summary>
-        /// <param name="A"></param>
-        /// <param name="B"></param>
+        /// <param name="A">The first value in the operation</param>
+        /// <param name="B">The second value in the operation</param>
         /// <returns></returns>
         public static %Type%Fraction Multiply(%Type%Fraction A, %Type% B) {
             return new %Type%Fraction(A.numerator * B, A.denominator);
@@ -36,8 +36,8 @@ namespace DaanV2.Math {
         /// <summary>
         /// 
         /// </summary>
-        /// <param name="A"></param>
-        /// <param name="B"></param>
+        /// <param name="A">The first value in the operation</param>
+        /// <param name="B">The second value in the operation</param>
         /// <returns></returns>
         public static %Type%Fraction Addition(%Type%Fraction A, %Type%Fraction B) {
             if (A.denominator == B.denominator) {
@@ -51,11 +51,11 @@ namespace DaanV2.Math {
             return new %Type%Fraction(numeratorA + numeratorB, denominator);
         }
 
-                /// <summary>
+        /// <summary>
         /// 
         /// </summary>
-        /// <param name="A"></param>
-        /// <param name="B"></param>
+        /// <param name="A">The first value in the operation</param>
+        /// <param name="B">The second value in the operation</param>
         /// <returns></returns>
         public static %Type%Fraction Addition(%Type%Fraction A, %Type% B) {
             if (A.denominator == 1) {
@@ -72,8 +72,8 @@ namespace DaanV2.Math {
         /// <summary>
         /// 
         /// </summary>
-        /// <param name="A"></param>
-        /// <param name="B"></param>
+        /// <param name="A">The first value in the operation</param>
+        /// <param name="B">The second value in the operation</param>
         /// <returns></returns>
         public static %Type%Fraction Substract(%Type%Fraction A, %Type%Fraction B) {
             if (A.denominator == B.denominator) {
@@ -90,8 +90,8 @@ namespace DaanV2.Math {
         /// <summary>
         /// 
         /// </summary>
-        /// <param name="A"></param>
-        /// <param name="B"></param>
+        /// <param name="A">The first value in the operation</param>
+        /// <param name="B">The second value in the operation</param>
         /// <returns></returns>
         public static %Type%Fraction Substract(%Type%Fraction A, %Type% B) {
             if (A.denominator == B.denominator) {
@@ -108,8 +108,8 @@ namespace DaanV2.Math {
         /// <summary>
         /// 
         /// </summary>
-        /// <param name="A"></param>
-        /// <param name="B"></param>
+        /// <param name="A">The first value in the operation</param>
+        /// <param name="B">The second value in the operation</param>
         /// <returns></returns>
         public static %Type%Fraction Inverse(%Type%Fraction A) {
             return new %Type%Fraction(A.denominator, A.numerator)
