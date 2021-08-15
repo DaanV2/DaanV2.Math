@@ -4,7 +4,7 @@ using System.IO;
 namespace Generator {
     public class Program {
         public static readonly String TemplateFolder = Utillity.FindFolder("Template");
-        public static readonly String DestinationFolder = Utillity.FindFolder("DaanV2.Math");
+        public static readonly String DestinationFolder = Utillity.FindParentFolder("DaanV2.Math");
 
         public static readonly String[] Types = new String[]{
             "Single",

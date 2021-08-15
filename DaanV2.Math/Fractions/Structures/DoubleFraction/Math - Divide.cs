@@ -6,48 +6,40 @@ using DaanV2.Math.Fractions;
 
 namespace DaanV2.Math {
     public static partial class Math {        
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <param name="numerator"></param>
-        /// <param name="denominator"></param>
-        /// <returns></returns>
+        /// <summary>Preforms the division operation on the given data:    numerator / denominator = result</summary>
+        /// <param name="numerator">The numerator value of the division</param>
+        /// <param name="denominator">The denominator of the division</param>
+        /// <returns>A fraction representing the division</returns>
         public static DoubleFraction Divide(Double numerator, Double denominator) {
             return new DoubleFraction(numerator, denominator);
         }
         
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <param name="numerator"></param>
-        /// <param name="denominator"></param>
-        /// <returns></returns>
+        /// <summary>Preforms the division operation on the given data:    numerator / denominator = result</summary>
+        /// <param name="numerator">The numerator value of the division</param>
+        /// <param name="denominator">The denominator of the division</param>
+        /// <returns>A fraction representing the division</returns>
         public static DoubleFraction Divide(DoubleFraction numerator, DoubleFraction denominator) {
             //   1     7     1     9  
             //  --- / --- = --- * --- 
             //   5     9     5     7  
 
-            return new DoubleFraction(A.numerator * B.denominator, A.denominator * B.numerator);
+            return new DoubleFraction((Double)(numerator.Numerator * denominator.Denominator), (Double)(numerator.Denominator * denominator.Numerator));
         }
         
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <param name="numerator"></param>
-        /// <param name="denominator"></param>
-        /// <returns></returns>
-        public static DoubleFraction Divide(DoubleFraction A, Double B) {
-            return new DoubleFraction(A.numerator, A.denominator * B);
+        /// <summary>Preforms the division operation on the given data:    numerator / denominator = result</summary>
+        /// <param name="numerator">The numerator value of the division</param>
+        /// <param name="denominator">The denominator of the division</param>
+        /// <returns>A fraction representing the division</returns>
+        public static DoubleFraction Divide(DoubleFraction numerator, Double denominator) {
+            return new DoubleFraction(numerator.Numerator, (Double)(numerator.Denominator * denominator));
         }
 
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <param name="numerator"></param>
-        /// <param name="denominator"></param>
-        /// <returns></returns>
-        public static DoubleFraction Divide(Double B, DoubleFraction A) {
-            return new DoubleFraction(A.denominator * B, A.numerator);
+        /// <summary>Preforms the division operation on the given data:    numerator / denominator = result</summary>
+        /// <param name="numerator">The numerator value of the division</param>
+        /// <param name="denominator">The denominator of the division</param>
+        /// <returns>A fraction representing the division</returns>
+        public static DoubleFraction Divide(Double numerator, DoubleFraction denominator) {
+            return new DoubleFraction((Double)(denominator.Denominator * numerator), denominator.Numerator);
         }
     }
 }

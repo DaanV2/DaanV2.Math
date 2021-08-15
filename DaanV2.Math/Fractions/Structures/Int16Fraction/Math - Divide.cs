@@ -6,48 +6,40 @@ using DaanV2.Math.Fractions;
 
 namespace DaanV2.Math {
     public static partial class Math {        
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <param name="numerator"></param>
-        /// <param name="denominator"></param>
-        /// <returns></returns>
+        /// <summary>Preforms the division operation on the given data:    numerator / denominator = result</summary>
+        /// <param name="numerator">The numerator value of the division</param>
+        /// <param name="denominator">The denominator of the division</param>
+        /// <returns>A fraction representing the division</returns>
         public static Int16Fraction Divide(Int16 numerator, Int16 denominator) {
             return new Int16Fraction(numerator, denominator);
         }
         
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <param name="numerator"></param>
-        /// <param name="denominator"></param>
-        /// <returns></returns>
+        /// <summary>Preforms the division operation on the given data:    numerator / denominator = result</summary>
+        /// <param name="numerator">The numerator value of the division</param>
+        /// <param name="denominator">The denominator of the division</param>
+        /// <returns>A fraction representing the division</returns>
         public static Int16Fraction Divide(Int16Fraction numerator, Int16Fraction denominator) {
             //   1     7     1     9  
             //  --- / --- = --- * --- 
             //   5     9     5     7  
 
-            return new Int16Fraction(A.numerator * B.denominator, A.denominator * B.numerator);
+            return new Int16Fraction((Int16)(numerator.Numerator * denominator.Denominator), (Int16)(numerator.Denominator * denominator.Numerator));
         }
         
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <param name="numerator"></param>
-        /// <param name="denominator"></param>
-        /// <returns></returns>
-        public static Int16Fraction Divide(Int16Fraction A, Int16 B) {
-            return new Int16Fraction(A.numerator, A.denominator * B);
+        /// <summary>Preforms the division operation on the given data:    numerator / denominator = result</summary>
+        /// <param name="numerator">The numerator value of the division</param>
+        /// <param name="denominator">The denominator of the division</param>
+        /// <returns>A fraction representing the division</returns>
+        public static Int16Fraction Divide(Int16Fraction numerator, Int16 denominator) {
+            return new Int16Fraction(numerator.Numerator, (Int16)(numerator.Denominator * denominator));
         }
 
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <param name="numerator"></param>
-        /// <param name="denominator"></param>
-        /// <returns></returns>
-        public static Int16Fraction Divide(Int16 B, Int16Fraction A) {
-            return new Int16Fraction(A.denominator * B, A.numerator);
+        /// <summary>Preforms the division operation on the given data:    numerator / denominator = result</summary>
+        /// <param name="numerator">The numerator value of the division</param>
+        /// <param name="denominator">The denominator of the division</param>
+        /// <returns>A fraction representing the division</returns>
+        public static Int16Fraction Divide(Int16 numerator, Int16Fraction denominator) {
+            return new Int16Fraction((Int16)(denominator.Denominator * numerator), denominator.Numerator);
         }
     }
 }

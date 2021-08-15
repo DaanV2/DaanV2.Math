@@ -4,15 +4,11 @@
 using System;
 
 namespace DaanV2.Math.Fractions {
-    public partial struct Int32Fraction : IFraction<Int32> {
-        /// <summary>
-        /// 
-        /// </summary>
+    public readonly partial struct Int32Fraction : IFraction<Int32> {
+        /// <summary>Gets the Denominator of this object, (the number below the line)</summary>
         public readonly Int32 Denominator { get; }
 
-        /// <summary>
-        /// 
-        /// </summary>
+        /// <summary>Gets the Numerator of this object, (the number above the line</summary>
         public readonly Int32 Numerator { get; }
     }
 }

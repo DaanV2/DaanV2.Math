@@ -10,109 +10,109 @@ namespace DaanV2.Math {
         /// <param name="Fraction"></param>
         /// <returns></returns>
         public static UInt64 Solve(UInt64Fraction Fraction) {
-            return Fraction.Numerator / Fraction.Denominator;
+            return (UInt64)(Fraction.Numerator / Fraction.Denominator);
         }
 
         /// <summary>
         /// 
         /// </summary>
-        /// <param name="A"></param>
-        /// <param name="B"></param>
+        /// <param name="A">The first value in the operation</param>
+        /// <param name="B">The second value in the operation</param>
         /// <returns></returns>
         public static UInt64Fraction Multiply(UInt64Fraction A, UInt64Fraction B) {
-            return new UInt64Fraction(A.numerator * B.numerator, A.denominator * B.denominator);
+            return new UInt64Fraction((UInt64)(A.Numerator * B.Numerator), (UInt64)(A.Denominator * B.Denominator));
         }
 
                 /// <summary>
         /// 
         /// </summary>
-        /// <param name="A"></param>
-        /// <param name="B"></param>
+        /// <param name="A">The first value in the operation</param>
+        /// <param name="B">The second value in the operation</param>
         /// <returns></returns>
         public static UInt64Fraction Multiply(UInt64Fraction A, UInt64 B) {
-            return new UInt64Fraction(A.numerator * B, A.denominator);
+            return new UInt64Fraction((UInt64)(A.Numerator * B), A.Denominator);
         }
 
         /// <summary>
         /// 
         /// </summary>
-        /// <param name="A"></param>
-        /// <param name="B"></param>
+        /// <param name="A">The first value in the operation</param>
+        /// <param name="B">The second value in the operation</param>
         /// <returns></returns>
         public static UInt64Fraction Addition(UInt64Fraction A, UInt64Fraction B) {
-            if (A.denominator == B.denominator) {
-                return new UInt64Fraction(A.numerator + B.numerator, A.denominator);
+            if (A.Denominator == B.Denominator) {
+                return new UInt64Fraction((UInt64)(A.Numerator + B.Numerator), A.Denominator);
             }
 
-            UInt64 denominator = A.denominator * B.denominator;
-            UInt64 numeratorA = A.numerator * B.denominator;
-            UInt64 numeratorB = B.numerator * A.denominator;
+            UInt64 denominator = (UInt64)(A.Denominator * B.Denominator);
+            UInt64 numeratorA = (UInt64)(A.Numerator * B.Denominator);
+            UInt64 numeratorB = (UInt64)(B.Numerator * A.Denominator);
             
-            return new UInt64Fraction(numeratorA + numeratorB, denominator);
+            return new UInt64Fraction((UInt64)(numeratorA + numeratorB), denominator);
         }
 
-                /// <summary>
+        /// <summary>
         /// 
         /// </summary>
-        /// <param name="A"></param>
-        /// <param name="B"></param>
+        /// <param name="A">The first value in the operation</param>
+        /// <param name="B">The second value in the operation</param>
         /// <returns></returns>
         public static UInt64Fraction Addition(UInt64Fraction A, UInt64 B) {
-            if (A.denominator == 1) {
-                return new UInt64Fraction(A.numerator + B.numerator, A.denominator);
+            if (A.Denominator == 1) {
+                return new UInt64Fraction((UInt64)(A.Numerator + B), A.Denominator);
             }
 
-            UInt64 denominator = A.denominator; //* 1
-            UInt64 numeratorA = A.numerator; //* 1
-            UInt64 numeratorB = B * A.denominator;
+            UInt64 denominator = A.Denominator; //* 1
+            UInt64 numeratorA = A.Numerator; //* 1
+            UInt64 numeratorB = (UInt64)(B * A.Denominator);
             
-            return new UInt64Fraction(numeratorA + numeratorB, denominator);
+            return new UInt64Fraction((UInt64)(numeratorA + numeratorB), denominator);
         }
 
         /// <summary>
         /// 
         /// </summary>
-        /// <param name="A"></param>
-        /// <param name="B"></param>
+        /// <param name="A">The first value in the operation</param>
+        /// <param name="B">The second value in the operation</param>
         /// <returns></returns>
         public static UInt64Fraction Substract(UInt64Fraction A, UInt64Fraction B) {
-            if (A.denominator == B.denominator) {
-                return new UInt64Fraction(A.numerator - B.numerator, A.denominator);
+            if (A.Denominator == B.Denominator) {
+                return new UInt64Fraction((UInt64)(A.Numerator - B.Numerator), A.Denominator);
             }
 
-            UInt64 denominator = A.denominator * B.denominator;
-            UInt64 numeratorA = A.numerator * B.denominator;
-            UInt64 numeratorB = B.numerator * A.denominator;
+            UInt64 denominator = (UInt64)(A.Denominator * B.Denominator);
+            UInt64 numeratorA = (UInt64)(A.Numerator * B.Denominator);
+            UInt64 numeratorB = (UInt64)(B.Numerator * A.Denominator);
             
-            return new UInt64Fraction(numeratorA - numeratorB, denominator);
+            return new UInt64Fraction((UInt64)(numeratorA - numeratorB), denominator);
         }
 
         /// <summary>
         /// 
         /// </summary>
-        /// <param name="A"></param>
-        /// <param name="B"></param>
+        /// <param name="A">The first value in the operation</param>
+        /// <param name="B">The second value in the operation</param>
         /// <returns></returns>
         public static UInt64Fraction Substract(UInt64Fraction A, UInt64 B) {
-            if (A.denominator == B.denominator) {
-                return new UInt64Fraction(A.numerator - B.numerator, A.denominator);
+            if (A.Denominator == 1) {
+                return new UInt64Fraction((UInt64)(A.Numerator - B), A.Denominator);
             }
 
-            UInt64 denominator = A.denominator; //* 1
-            UInt64 numeratorA = A.numerato; //* 1
-            UInt64 numeratorB = B * A.denominator;
+            UInt64 denominator = A.Denominator; //* 1
+            UInt64 numeratorA = A.Numerator; //* 1
+            UInt64 numeratorB = (UInt64)(B * A.Denominator);
             
-            return new UInt64Fraction(numeratorA - numeratorB, denominator);
+            return new UInt64Fraction((UInt64)(numeratorA - numeratorB), denominator);
         }
 
         /// <summary>
         /// 
         /// </summary>
-        /// <param name="A"></param>
-        /// <param name="B"></param>
+        /// <param name="A">The first value in the operation</param>
+        /// <param name="B">The second value in the operation</param>
         /// <returns></returns>
         public static UInt64Fraction Inverse(UInt64Fraction A) {
-            return new UInt64Fraction(A.denominator, A.numerator)
+            return new UInt64Fraction(A.Denominator, A.Numerator);
         }
     }
 }

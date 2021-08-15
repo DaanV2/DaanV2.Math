@@ -10,109 +10,109 @@ namespace DaanV2.Math {
         /// <param name="Fraction"></param>
         /// <returns></returns>
         public static UInt16 Solve(UInt16Fraction Fraction) {
-            return Fraction.Numerator / Fraction.Denominator;
+            return (UInt16)(Fraction.Numerator / Fraction.Denominator);
         }
 
         /// <summary>
         /// 
         /// </summary>
-        /// <param name="A"></param>
-        /// <param name="B"></param>
+        /// <param name="A">The first value in the operation</param>
+        /// <param name="B">The second value in the operation</param>
         /// <returns></returns>
         public static UInt16Fraction Multiply(UInt16Fraction A, UInt16Fraction B) {
-            return new UInt16Fraction(A.numerator * B.numerator, A.denominator * B.denominator);
+            return new UInt16Fraction((UInt16)(A.Numerator * B.Numerator), (UInt16)(A.Denominator * B.Denominator));
         }
 
                 /// <summary>
         /// 
         /// </summary>
-        /// <param name="A"></param>
-        /// <param name="B"></param>
+        /// <param name="A">The first value in the operation</param>
+        /// <param name="B">The second value in the operation</param>
         /// <returns></returns>
         public static UInt16Fraction Multiply(UInt16Fraction A, UInt16 B) {
-            return new UInt16Fraction(A.numerator * B, A.denominator);
+            return new UInt16Fraction((UInt16)(A.Numerator * B), A.Denominator);
         }
 
         /// <summary>
         /// 
         /// </summary>
-        /// <param name="A"></param>
-        /// <param name="B"></param>
+        /// <param name="A">The first value in the operation</param>
+        /// <param name="B">The second value in the operation</param>
         /// <returns></returns>
         public static UInt16Fraction Addition(UInt16Fraction A, UInt16Fraction B) {
-            if (A.denominator == B.denominator) {
-                return new UInt16Fraction(A.numerator + B.numerator, A.denominator);
+            if (A.Denominator == B.Denominator) {
+                return new UInt16Fraction((UInt16)(A.Numerator + B.Numerator), A.Denominator);
             }
 
-            UInt16 denominator = A.denominator * B.denominator;
-            UInt16 numeratorA = A.numerator * B.denominator;
-            UInt16 numeratorB = B.numerator * A.denominator;
+            UInt16 denominator = (UInt16)(A.Denominator * B.Denominator);
+            UInt16 numeratorA = (UInt16)(A.Numerator * B.Denominator);
+            UInt16 numeratorB = (UInt16)(B.Numerator * A.Denominator);
             
-            return new UInt16Fraction(numeratorA + numeratorB, denominator);
+            return new UInt16Fraction((UInt16)(numeratorA + numeratorB), denominator);
         }
 
-                /// <summary>
+        /// <summary>
         /// 
         /// </summary>
-        /// <param name="A"></param>
-        /// <param name="B"></param>
+        /// <param name="A">The first value in the operation</param>
+        /// <param name="B">The second value in the operation</param>
         /// <returns></returns>
         public static UInt16Fraction Addition(UInt16Fraction A, UInt16 B) {
-            if (A.denominator == 1) {
-                return new UInt16Fraction(A.numerator + B.numerator, A.denominator);
+            if (A.Denominator == 1) {
+                return new UInt16Fraction((UInt16)(A.Numerator + B), A.Denominator);
             }
 
-            UInt16 denominator = A.denominator; //* 1
-            UInt16 numeratorA = A.numerator; //* 1
-            UInt16 numeratorB = B * A.denominator;
+            UInt16 denominator = A.Denominator; //* 1
+            UInt16 numeratorA = A.Numerator; //* 1
+            UInt16 numeratorB = (UInt16)(B * A.Denominator);
             
-            return new UInt16Fraction(numeratorA + numeratorB, denominator);
+            return new UInt16Fraction((UInt16)(numeratorA + numeratorB), denominator);
         }
 
         /// <summary>
         /// 
         /// </summary>
-        /// <param name="A"></param>
-        /// <param name="B"></param>
+        /// <param name="A">The first value in the operation</param>
+        /// <param name="B">The second value in the operation</param>
         /// <returns></returns>
         public static UInt16Fraction Substract(UInt16Fraction A, UInt16Fraction B) {
-            if (A.denominator == B.denominator) {
-                return new UInt16Fraction(A.numerator - B.numerator, A.denominator);
+            if (A.Denominator == B.Denominator) {
+                return new UInt16Fraction((UInt16)(A.Numerator - B.Numerator), A.Denominator);
             }
 
-            UInt16 denominator = A.denominator * B.denominator;
-            UInt16 numeratorA = A.numerator * B.denominator;
-            UInt16 numeratorB = B.numerator * A.denominator;
+            UInt16 denominator = (UInt16)(A.Denominator * B.Denominator);
+            UInt16 numeratorA = (UInt16)(A.Numerator * B.Denominator);
+            UInt16 numeratorB = (UInt16)(B.Numerator * A.Denominator);
             
-            return new UInt16Fraction(numeratorA - numeratorB, denominator);
+            return new UInt16Fraction((UInt16)(numeratorA - numeratorB), denominator);
         }
 
         /// <summary>
         /// 
         /// </summary>
-        /// <param name="A"></param>
-        /// <param name="B"></param>
+        /// <param name="A">The first value in the operation</param>
+        /// <param name="B">The second value in the operation</param>
         /// <returns></returns>
         public static UInt16Fraction Substract(UInt16Fraction A, UInt16 B) {
-            if (A.denominator == B.denominator) {
-                return new UInt16Fraction(A.numerator - B.numerator, A.denominator);
+            if (A.Denominator == 1) {
+                return new UInt16Fraction((UInt16)(A.Numerator - B), A.Denominator);
             }
 
-            UInt16 denominator = A.denominator; //* 1
-            UInt16 numeratorA = A.numerato; //* 1
-            UInt16 numeratorB = B * A.denominator;
+            UInt16 denominator = A.Denominator; //* 1
+            UInt16 numeratorA = A.Numerator; //* 1
+            UInt16 numeratorB = (UInt16)(B * A.Denominator);
             
-            return new UInt16Fraction(numeratorA - numeratorB, denominator);
+            return new UInt16Fraction((UInt16)(numeratorA - numeratorB), denominator);
         }
 
         /// <summary>
         /// 
         /// </summary>
-        /// <param name="A"></param>
-        /// <param name="B"></param>
+        /// <param name="A">The first value in the operation</param>
+        /// <param name="B">The second value in the operation</param>
         /// <returns></returns>
         public static UInt16Fraction Inverse(UInt16Fraction A) {
-            return new UInt16Fraction(A.denominator, A.numerator)
+            return new UInt16Fraction(A.Denominator, A.Numerator);
         }
     }
 }
