@@ -6,7 +6,7 @@ using System;
 namespace DaanV2.Math.Fractions {
     public readonly partial struct UInt32Fraction {
         /// <summary>Converts this fraction to a double representation</summary>
-        /// <returns>A double</returns>
+        /// <returns>A <see cref="Double"/></returns>
         public Double ToDouble() {
             Double num = (Double)this.Numerator;
             Double den = (Double)this.Denominator;
@@ -14,11 +14,34 @@ namespace DaanV2.Math.Fractions {
         }
 
         /// <summary>Converts this fraction to a single / float representation</summary>
-        /// <returns>A single</returns>
+        /// <returns>A <see cref="Single"/></returns>
         public Single ToSingle() {
             Single num = (Single)this.Numerator;
             Single den = (Single)this.Denominator;
             return num / den;
+        }
+
+        /// <summary>Converts the string representation of a number to its UInt32-precision floating-point number equivalent.</summary>
+        /// <param name="s">The string to parse</param>
+        /// <returns>An <see cref="UInt32Fraction"/></returns>
+        public static UInt32Fraction Parse(String s) {
+            return Parse(s.AsSpan());
+        }
+
+        /// <summary>Converts the span representation of a number to its UInt32-precision floating-point number equivalent.</summary>
+        /// <param name="s">The span to parse</param>
+        /// <returns>An <see cref="UInt32Fraction"/></returns>
+        public static UInt32Fraction Parse(ReadOnlySpan<Char> s) {
+            Int32 Index = s.IndexOf('/');
+
+            if (Index < 0) {
+                throw new ArgumentException("string does not contain /");
+            }
+
+            ReadOnlySpan<Char> num = s[..Index];
+            ReadOnlySpan<Char> den = s[(Index + 1)..];
+
+            return new UInt32Fraction(UInt32.Parse(num), UInt32.Parse(den));
         }
     }
 }
