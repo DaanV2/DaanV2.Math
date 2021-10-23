@@ -1,6 +1,6 @@
-﻿/*-------------------------------*/
+﻿/* --------------------------------- */
 /*  NOTICE: auto generated file  */
-/*-------------------------------*/
+/* --------------------------------- */
 using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 

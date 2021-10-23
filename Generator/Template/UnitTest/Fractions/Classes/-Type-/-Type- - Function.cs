@@ -1,6 +1,6 @@
-﻿/*-------------------------------*/
+﻿/* --------------------------------- */
 /*  NOTICE: auto generated file  */
-/*-------------------------------*/
+/* --------------------------------- */
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace UnitTest.Fractions {
