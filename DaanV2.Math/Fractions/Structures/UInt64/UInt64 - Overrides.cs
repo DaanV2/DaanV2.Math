@@ -1,6 +1,6 @@
-/*-------------------------------*/
+/* --------------------------------- */
 /*  NOTICE: auto generated file  */
-/*-------------------------------*/
+/* --------------------------------- */
 using System;
 using System.Runtime.CompilerServices;
 
@@ -38,6 +38,54 @@ namespace DaanV2.Math.Fractions {
             if (this.Denominator == other.Denominator && this.Numerator == other.Numerator) {
                 return true;
             }
+
+            return false;
+        }
+
+        /// <summary>Checks whenever the given object equals value to this instance</summary>
+        /// <param name="other">The object to compare to</param>
+        /// <returns>True or false if the object equal each other</returns>
+        public Boolean EqualsValue(UInt64Fraction other) {
+            var temp = Math.Substract(this, other);
+
+            if (temp.Numerator == 0) return true;
+
+            return false;
+        }        
+
+        /// <summary>Checks whenever the given object equals to this instance</summary>
+        /// <param name="other">The object to compare to</param>
+        /// <param name="error">The allowed range of error</param>
+        /// <returns>True or false if the object equal each other</returns>
+        public Boolean EqualsValue(UInt64Fraction other, UInt64 error) {
+            var temp = Math.Substract(this, other);
+
+            if (temp.Numerator <= error) return true;
+            if (temp.Numerator >= -error) return true;
+
+            return false;
+        }
+
+        /// <summary>Checks whenever the given object equals value to this instance</summary>
+        /// <param name="other">The object to compare to</param>
+        /// <returns>True or false if the object equal each other</returns>
+        public Boolean EqualsValue(IFraction<UInt64> other) {
+            var temp = Math.Substract(this, other);
+
+            if (temp.Numerator == 0) return true;
+
+            return false;
+        }        
+
+        /// <summary>Checks whenever the given object equals to this instance</summary>
+        /// <param name="other">The object to compare to</param>
+        /// <param name="error">The allowed range of error</param>
+        /// <returns>True or false if the object equal each other</returns>
+        public Boolean EqualsValue(IFraction<UInt64>, UInt64 error) {
+            var temp = Math.Substract(this, other);
+
+            if (temp.Numerator <= error) return true;
+            if (temp.Numerator >= -error) return true;
 
             return false;
         }

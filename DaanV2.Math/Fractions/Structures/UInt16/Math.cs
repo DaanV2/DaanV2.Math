@@ -1,24 +1,25 @@
-/*-------------------------------*/
+/* --------------------------------- */
 /*  NOTICE: auto generated file  */
-/*-------------------------------*/
+/* --------------------------------- */
 using System;
 using DaanV2.Math.Fractions;
+using System.Runtime.CompilerServices;
 
 namespace DaanV2.Math {
     public static partial class Math {
-        /// <summary>Solves the fraction</summary>
+        /// <summary>Solves the fraction into a single value</summary>
         /// <param name="Fraction"></param>
-        /// <returns></returns>
+        /// <returns>The value of the fraction</returns>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static UInt16 Solve(UInt16Fraction Fraction) {
             return (UInt16)(Fraction.Numerator / Fraction.Denominator);
         }
 
-        /// <summary>
-        /// 
-        /// </summary>
+        /// <summary>Preforms the multiplication operation on the given fractions</summary>
         /// <param name="A">The first value in the operation</param>
         /// <param name="B">The second value in the operation</param>
         /// <returns></returns>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static UInt16Fraction Multiply(UInt16Fraction A, UInt16Fraction B) {
             return new UInt16Fraction((UInt16)(A.Numerator * B.Numerator), (UInt16)(A.Denominator * B.Denominator));
         }
@@ -29,6 +30,7 @@ namespace DaanV2.Math {
         /// <param name="A">The first value in the operation</param>
         /// <param name="B">The second value in the operation</param>
         /// <returns></returns>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static UInt16Fraction Multiply(UInt16Fraction A, UInt16 B) {
             return new UInt16Fraction((UInt16)(A.Numerator * B), A.Denominator);
         }
@@ -39,6 +41,7 @@ namespace DaanV2.Math {
         /// <param name="A">The first value in the operation</param>
         /// <param name="B">The second value in the operation</param>
         /// <returns></returns>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static UInt16Fraction Addition(UInt16Fraction A, UInt16Fraction B) {
             if (A.Denominator == B.Denominator) {
                 return new UInt16Fraction((UInt16)(A.Numerator + B.Numerator), A.Denominator);
@@ -57,6 +60,7 @@ namespace DaanV2.Math {
         /// <param name="A">The first value in the operation</param>
         /// <param name="B">The second value in the operation</param>
         /// <returns></returns>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static UInt16Fraction Addition(UInt16Fraction A, UInt16 B) {
             if (A.Denominator == 1) {
                 return new UInt16Fraction((UInt16)(A.Numerator + B), A.Denominator);
@@ -75,6 +79,7 @@ namespace DaanV2.Math {
         /// <param name="A">The first value in the operation</param>
         /// <param name="B">The second value in the operation</param>
         /// <returns></returns>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static UInt16Fraction Substract(UInt16Fraction A, UInt16Fraction B) {
             if (A.Denominator == B.Denominator) {
                 return new UInt16Fraction((UInt16)(A.Numerator - B.Numerator), A.Denominator);
@@ -93,6 +98,7 @@ namespace DaanV2.Math {
         /// <param name="A">The first value in the operation</param>
         /// <param name="B">The second value in the operation</param>
         /// <returns></returns>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static UInt16Fraction Substract(UInt16Fraction A, UInt16 B) {
             if (A.Denominator == 1) {
                 return new UInt16Fraction((UInt16)(A.Numerator - B), A.Denominator);
@@ -111,6 +117,7 @@ namespace DaanV2.Math {
         /// <param name="A">The first value in the operation</param>
         /// <param name="B">The second value in the operation</param>
         /// <returns></returns>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static UInt16Fraction Inverse(UInt16Fraction A) {
             return new UInt16Fraction(A.Denominator, A.Numerator);
         }

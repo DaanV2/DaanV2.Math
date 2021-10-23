@@ -1,7 +1,8 @@
-/*-------------------------------*/
+/* --------------------------------- */
 /*  NOTICE: auto generated file  */
-/*-------------------------------*/
+/* --------------------------------- */
 using System;
+using System.Runtime.CompilerServices;
 
 namespace DaanV2.Math.Fractions {
     public readonly partial struct Int16Fraction {
@@ -9,6 +10,7 @@ namespace DaanV2.Math.Fractions {
         /// <param name="left">The first value</param>
         /// <param name="right">The second value</param>
         /// <returns>A <see cref="Int16Fraction"/></returns>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static Int16Fraction operator +(Int16Fraction left, Int16Fraction right) {
             return Math.Addition(left, right);
         }
@@ -17,6 +19,7 @@ namespace DaanV2.Math.Fractions {
         /// <param name="left">The first value</param>
         /// <param name="right">The second value</param>
         /// <returns>A <see cref="Int16Fraction"/></returns>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static Int16Fraction operator +(Int16Fraction left, Int16 right) {
             return Math.Addition(left, right);
         }
@@ -25,6 +28,7 @@ namespace DaanV2.Math.Fractions {
         /// <param name="left">The first value</param>
         /// <param name="right">The second value</param>
         /// <returns>A <see cref="Int16Fraction"/></returns>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static Int16Fraction operator -(Int16Fraction left, Int16Fraction right) {
             return Math.Substract(left, right);
         }
@@ -33,6 +37,7 @@ namespace DaanV2.Math.Fractions {
         /// <param name="left">The first value</param>
         /// <param name="right">The second value</param>
         /// <returns>A <see cref="Int16Fraction"/></returns>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static Int16Fraction operator -(Int16Fraction left, Int16 right) {
             return Math.Substract(left, right);
         }
@@ -41,6 +46,7 @@ namespace DaanV2.Math.Fractions {
         /// <param name="left">The first value</param>
         /// <param name="right">The second value</param>
         /// <returns>A <see cref="Int16Fraction"/></returns>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static Int16Fraction operator *(Int16Fraction left, Int16Fraction right) {
             return Math.Multiply(left, right);
         }
@@ -49,6 +55,7 @@ namespace DaanV2.Math.Fractions {
         /// <param name="left">The first value</param>
         /// <param name="right">The second value</param>
         /// <returns>A <see cref="Int16Fraction"/></returns>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static Int16Fraction operator *(Int16Fraction left, Int16 right) {
             return Math.Multiply(left, right);
         }
@@ -57,6 +64,7 @@ namespace DaanV2.Math.Fractions {
         /// <param name="left">The first value</param>
         /// <param name="right">The second value</param>
         /// <returns>A <see cref="Int16Fraction"/></returns>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static Int16Fraction operator /(Int16Fraction left, Int16Fraction right) {
             return Math.Divide(left, right);
         }
@@ -65,6 +73,7 @@ namespace DaanV2.Math.Fractions {
         /// <param name="left">The first value</param>
         /// <param name="right">The second value</param>
         /// <returns>A <see cref="Int16Fraction"/></returns>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static Int16Fraction operator /(Int16Fraction left, Int16 right) {
             return Math.Divide(left, right);
         }
@@ -73,6 +82,7 @@ namespace DaanV2.Math.Fractions {
         /// <param name="left">The first value</param>
         /// <param name="right">The second value</param>
         /// <returns>A <see cref="Int16Fraction"/></returns>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static Int16Fraction operator /(Int16 left, Int16Fraction right) {
             return Math.Divide(left, right);
         }
@@ -80,6 +90,7 @@ namespace DaanV2.Math.Fractions {
         /// <summary>The explicit cast from <see cref="Int16"/> to <see cref="Int16Fraction"/></summary>
         /// <param name="value">The object to cast</param>
         /// <returns>A <see cref="Int16Fraction"/></returns>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static explicit operator Int16Fraction(Int16 value) {
             return new Int16Fraction(value, 1);
         }
@@ -87,8 +98,25 @@ namespace DaanV2.Math.Fractions {
         /// <summary>The explicit cast from <see cref="Int16Fraction"/> to <see cref="Int16"/></summary>
         /// <param name="value">The object to cast</param>
         /// <returns>A <see cref="Int16"/></returns>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static explicit operator Int16(Int16Fraction value) {
             return Math.Solve(value);
+        }
+
+        /// <summary>The explicit cast from <see cref="Tuple{Int16, Int16}"/> to <see cref="Int16Fraction"/></summary>
+        /// <param name="value">The object to cast</param>
+        /// <returns>A <see cref="Int16Fraction"/></returns>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static implicit operator Int16Fraction((Int16 numerator, Int16 denominator) v) {
+            return new Int16Fraction(v.numerator, v.denominator);
+        }        
+
+        /// <summary>The explicit cast from <see cref="IFraction{Int16}"/> to <see cref="Int16Fraction"/></summary>
+        /// <param name="value">The object to cast</param>
+        /// <returns>A <see cref="Int16Fraction"/></returns>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static implicit operator Int16Fraction(IFraction<Int16> v) {
+            return new Int16Fraction(v.Numerator, v.Denominator);
         }
     }
 }

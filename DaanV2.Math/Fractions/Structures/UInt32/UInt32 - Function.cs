@@ -1,6 +1,6 @@
-/*-------------------------------*/
+/* --------------------------------- */
 /*  NOTICE: auto generated file  */
-/*-------------------------------*/
+/* --------------------------------- */
 using System;
 
 namespace DaanV2.Math.Fractions {
@@ -19,6 +19,12 @@ namespace DaanV2.Math.Fractions {
             Single num = (Single)this.Numerator;
             Single den = (Single)this.Denominator;
             return num / den;
+        }
+
+        /// <summary>Converts this fraction to a single number representation, this might result in turncating depending on the type</summary>
+        /// <returns>A <see cref="UInt32"/></returns>
+        public UInt32 ToValue() {
+            return Math.Solve(this);
         }
 
         /// <summary>Converts the string representation of a number to its UInt32-precision floating-point number equivalent.</summary>
