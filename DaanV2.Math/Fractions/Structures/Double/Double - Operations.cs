@@ -109,14 +109,6 @@ namespace DaanV2.Math.Fractions {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static implicit operator DoubleFraction((Double numerator, Double denominator) v) {
             return new DoubleFraction(v.numerator, v.denominator);
-        }        
-
-        /// <summary>The explicit cast from <see cref="IFraction{Double}"/> to <see cref="DoubleFraction"/></summary>
-        /// <param name="value">The object to cast</param>
-        /// <returns>A <see cref="DoubleFraction"/></returns>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static implicit operator DoubleFraction(IFraction<Double> v) {
-            return new DoubleFraction(v.Numerator, v.Denominator);
         }
     }
 }

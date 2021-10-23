@@ -7,40 +7,28 @@ using System.Runtime.CompilerServices;
 
 namespace DaanV2.Math {
     public static partial class Math {
-        /// <summary>Solves the fraction into a single value</summary>
-        /// <param name="Fraction"></param>
-        /// <returns>The value of the fraction</returns>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static Int32 Solve(Int32Fraction Fraction) {
-            return (Int32)(Fraction.Numerator / Fraction.Denominator);
-        }
-
         /// <summary>Preforms the multiplication operation on the given fractions</summary>
         /// <param name="A">The first value in the operation</param>
         /// <param name="B">The second value in the operation</param>
-        /// <returns></returns>
+        /// <returns>A Int32Fraction</returns>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static Int32Fraction Multiply(Int32Fraction A, Int32Fraction B) {
             return new Int32Fraction((Int32)(A.Numerator * B.Numerator), (Int32)(A.Denominator * B.Denominator));
         }
 
-                /// <summary>
-        /// 
-        /// </summary>
+        /// <summary>Preforms the multiplication operation on the given fractions</summary>
         /// <param name="A">The first value in the operation</param>
         /// <param name="B">The second value in the operation</param>
-        /// <returns></returns>
+        /// <returns>A Int32Fraction</returns>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static Int32Fraction Multiply(Int32Fraction A, Int32 B) {
             return new Int32Fraction((Int32)(A.Numerator * B), A.Denominator);
         }
 
-        /// <summary>
-        /// 
-        /// </summary>
+        /// <summary>Preforms the addition operation on the given fractions</summary>
         /// <param name="A">The first value in the operation</param>
         /// <param name="B">The second value in the operation</param>
-        /// <returns></returns>
+        /// <returns>A Int32Fraction</returns>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static Int32Fraction Addition(Int32Fraction A, Int32Fraction B) {
             if (A.Denominator == B.Denominator) {
@@ -54,12 +42,10 @@ namespace DaanV2.Math {
             return new Int32Fraction((Int32)(numeratorA + numeratorB), denominator);
         }
 
-        /// <summary>
-        /// 
-        /// </summary>
+        /// <summary>Preforms the addition operation on the given fractions</summary>
         /// <param name="A">The first value in the operation</param>
         /// <param name="B">The second value in the operation</param>
-        /// <returns></returns>
+        /// <returns>A Int32Fraction</returns>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static Int32Fraction Addition(Int32Fraction A, Int32 B) {
             if (A.Denominator == 1) {
@@ -73,12 +59,10 @@ namespace DaanV2.Math {
             return new Int32Fraction((Int32)(numeratorA + numeratorB), denominator);
         }
 
-        /// <summary>
-        /// 
-        /// </summary>
+        /// <summary>Preforms the substract operation on the given fractions</summary>
         /// <param name="A">The first value in the operation</param>
         /// <param name="B">The second value in the operation</param>
-        /// <returns></returns>
+        /// <returns>A Int32Fraction</returns>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static Int32Fraction Substract(Int32Fraction A, Int32Fraction B) {
             if (A.Denominator == B.Denominator) {
@@ -92,16 +76,14 @@ namespace DaanV2.Math {
             return new Int32Fraction((Int32)(numeratorA - numeratorB), denominator);
         }
 
-        /// <summary>
-        /// 
-        /// </summary>
+        /// <summary>Preforms the substract operation on the given fractions</summary>
         /// <param name="A">The first value in the operation</param>
         /// <param name="B">The second value in the operation</param>
-        /// <returns></returns>
+        /// <returns>A Int32Fraction</returns>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static Int32Fraction Substract(Int32Fraction A, Int32 B) {
             if (A.Denominator == 1) {
-                return new Int32Fraction((Int32)(A.Numerator - B), A.Denominator);
+                return new Int32Fraction((Int32)(A.Numerator - B), 1);
             }
 
             Int32 denominator = A.Denominator; //* 1
@@ -111,15 +93,13 @@ namespace DaanV2.Math {
             return new Int32Fraction((Int32)(numeratorA - numeratorB), denominator);
         }
 
-        /// <summary>
-        /// 
-        /// </summary>
+        /// <summary>Preforms the power operation on the given fraction</summary>
         /// <param name="A">The first value in the operation</param>
-        /// <param name="B">The second value in the operation</param>
-        /// <returns></returns>
+        /// <param name="power">The power to raise the fraction to</param>
+        /// <returns>A Int32Fraction</returns>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static Int32Fraction Inverse(Int32Fraction A) {
-            return new Int32Fraction(A.Denominator, A.Numerator);
+        public static Int32Fraction Pow(Int32Fraction A, Int32 power) {
+            return new Int32Fraction((Int32)System.Math.Pow(A.Numerator, power) , (Int32)System.Math.Pow(A.Denominator, power));
         }
     }
 }

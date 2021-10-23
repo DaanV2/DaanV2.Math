@@ -46,46 +46,22 @@ namespace DaanV2.Math.Fractions {
         /// <param name="other">The object to compare to</param>
         /// <returns>True or false if the object equal each other</returns>
         public Boolean EqualsValue(UInt32Fraction other) {
-            var temp = Math.Substract(this, other);
+            UInt32Fraction temp = Math.Substract(this, other);
 
             if (temp.Numerator == 0) return true;
 
             return false;
-        }        
+        }
 
         /// <summary>Checks whenever the given object equals to this instance</summary>
         /// <param name="other">The object to compare to</param>
         /// <param name="error">The allowed range of error</param>
         /// <returns>True or false if the object equal each other</returns>
         public Boolean EqualsValue(UInt32Fraction other, UInt32 error) {
-            var temp = Math.Substract(this, other);
+            UInt32Fraction temp = Math.Substract(this, other);
 
             if (temp.Numerator <= error) return true;
-            if (temp.Numerator >= -error) return true;
-
-            return false;
-        }
-
-        /// <summary>Checks whenever the given object equals value to this instance</summary>
-        /// <param name="other">The object to compare to</param>
-        /// <returns>True or false if the object equal each other</returns>
-        public Boolean EqualsValue(IFraction<UInt32> other) {
-            var temp = Math.Substract(this, other);
-
-            if (temp.Numerator == 0) return true;
-
-            return false;
-        }        
-
-        /// <summary>Checks whenever the given object equals to this instance</summary>
-        /// <param name="other">The object to compare to</param>
-        /// <param name="error">The allowed range of error</param>
-        /// <returns>True or false if the object equal each other</returns>
-        public Boolean EqualsValue(IFraction<UInt32>, UInt32 error) {
-            var temp = Math.Substract(this, other);
-
-            if (temp.Numerator <= error) return true;
-            if (temp.Numerator >= -error) return true;
+            if (temp.Numerator + error >= 0) return true;
 
             return false;
         }

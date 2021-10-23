@@ -109,14 +109,6 @@ namespace DaanV2.Math.Fractions {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static implicit operator SingleFraction((Single numerator, Single denominator) v) {
             return new SingleFraction(v.numerator, v.denominator);
-        }        
-
-        /// <summary>The explicit cast from <see cref="IFraction{Single}"/> to <see cref="SingleFraction"/></summary>
-        /// <param name="value">The object to cast</param>
-        /// <returns>A <see cref="SingleFraction"/></returns>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static implicit operator SingleFraction(IFraction<Single> v) {
-            return new SingleFraction(v.Numerator, v.Denominator);
         }
     }
 }

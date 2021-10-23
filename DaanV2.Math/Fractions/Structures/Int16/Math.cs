@@ -7,40 +7,28 @@ using System.Runtime.CompilerServices;
 
 namespace DaanV2.Math {
     public static partial class Math {
-        /// <summary>Solves the fraction into a single value</summary>
-        /// <param name="Fraction"></param>
-        /// <returns>The value of the fraction</returns>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static Int16 Solve(Int16Fraction Fraction) {
-            return (Int16)(Fraction.Numerator / Fraction.Denominator);
-        }
-
         /// <summary>Preforms the multiplication operation on the given fractions</summary>
         /// <param name="A">The first value in the operation</param>
         /// <param name="B">The second value in the operation</param>
-        /// <returns></returns>
+        /// <returns>A Int16Fraction</returns>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static Int16Fraction Multiply(Int16Fraction A, Int16Fraction B) {
             return new Int16Fraction((Int16)(A.Numerator * B.Numerator), (Int16)(A.Denominator * B.Denominator));
         }
 
-                /// <summary>
-        /// 
-        /// </summary>
+        /// <summary>Preforms the multiplication operation on the given fractions</summary>
         /// <param name="A">The first value in the operation</param>
         /// <param name="B">The second value in the operation</param>
-        /// <returns></returns>
+        /// <returns>A Int16Fraction</returns>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static Int16Fraction Multiply(Int16Fraction A, Int16 B) {
             return new Int16Fraction((Int16)(A.Numerator * B), A.Denominator);
         }
 
-        /// <summary>
-        /// 
-        /// </summary>
+        /// <summary>Preforms the addition operation on the given fractions</summary>
         /// <param name="A">The first value in the operation</param>
         /// <param name="B">The second value in the operation</param>
-        /// <returns></returns>
+        /// <returns>A Int16Fraction</returns>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static Int16Fraction Addition(Int16Fraction A, Int16Fraction B) {
             if (A.Denominator == B.Denominator) {
@@ -54,12 +42,10 @@ namespace DaanV2.Math {
             return new Int16Fraction((Int16)(numeratorA + numeratorB), denominator);
         }
 
-        /// <summary>
-        /// 
-        /// </summary>
+        /// <summary>Preforms the addition operation on the given fractions</summary>
         /// <param name="A">The first value in the operation</param>
         /// <param name="B">The second value in the operation</param>
-        /// <returns></returns>
+        /// <returns>A Int16Fraction</returns>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static Int16Fraction Addition(Int16Fraction A, Int16 B) {
             if (A.Denominator == 1) {
@@ -73,12 +59,10 @@ namespace DaanV2.Math {
             return new Int16Fraction((Int16)(numeratorA + numeratorB), denominator);
         }
 
-        /// <summary>
-        /// 
-        /// </summary>
+        /// <summary>Preforms the substract operation on the given fractions</summary>
         /// <param name="A">The first value in the operation</param>
         /// <param name="B">The second value in the operation</param>
-        /// <returns></returns>
+        /// <returns>A Int16Fraction</returns>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static Int16Fraction Substract(Int16Fraction A, Int16Fraction B) {
             if (A.Denominator == B.Denominator) {
@@ -92,16 +76,14 @@ namespace DaanV2.Math {
             return new Int16Fraction((Int16)(numeratorA - numeratorB), denominator);
         }
 
-        /// <summary>
-        /// 
-        /// </summary>
+        /// <summary>Preforms the substract operation on the given fractions</summary>
         /// <param name="A">The first value in the operation</param>
         /// <param name="B">The second value in the operation</param>
-        /// <returns></returns>
+        /// <returns>A Int16Fraction</returns>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static Int16Fraction Substract(Int16Fraction A, Int16 B) {
             if (A.Denominator == 1) {
-                return new Int16Fraction((Int16)(A.Numerator - B), A.Denominator);
+                return new Int16Fraction((Int16)(A.Numerator - B), 1);
             }
 
             Int16 denominator = A.Denominator; //* 1
@@ -111,15 +93,13 @@ namespace DaanV2.Math {
             return new Int16Fraction((Int16)(numeratorA - numeratorB), denominator);
         }
 
-        /// <summary>
-        /// 
-        /// </summary>
+        /// <summary>Preforms the power operation on the given fraction</summary>
         /// <param name="A">The first value in the operation</param>
-        /// <param name="B">The second value in the operation</param>
-        /// <returns></returns>
+        /// <param name="power">The power to raise the fraction to</param>
+        /// <returns>A Int16Fraction</returns>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static Int16Fraction Inverse(Int16Fraction A) {
-            return new Int16Fraction(A.Denominator, A.Numerator);
+        public static Int16Fraction Pow(Int16Fraction A, Int16 power) {
+            return new Int16Fraction((Int16)System.Math.Pow(A.Numerator, power) , (Int16)System.Math.Pow(A.Denominator, power));
         }
     }
 }

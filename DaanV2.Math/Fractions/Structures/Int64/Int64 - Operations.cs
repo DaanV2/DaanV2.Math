@@ -109,14 +109,6 @@ namespace DaanV2.Math.Fractions {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static implicit operator Int64Fraction((Int64 numerator, Int64 denominator) v) {
             return new Int64Fraction(v.numerator, v.denominator);
-        }        
-
-        /// <summary>The explicit cast from <see cref="IFraction{Int64}"/> to <see cref="Int64Fraction"/></summary>
-        /// <param name="value">The object to cast</param>
-        /// <returns>A <see cref="Int64Fraction"/></returns>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static implicit operator Int64Fraction(IFraction<Int64> v) {
-            return new Int64Fraction(v.Numerator, v.Denominator);
         }
     }
 }

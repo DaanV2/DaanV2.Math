@@ -7,40 +7,28 @@ using System.Runtime.CompilerServices;
 
 namespace DaanV2.Math {
     public static partial class Math {
-        /// <summary>Solves the fraction into a single value</summary>
-        /// <param name="Fraction"></param>
-        /// <returns>The value of the fraction</returns>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static UInt32 Solve(UInt32Fraction Fraction) {
-            return (UInt32)(Fraction.Numerator / Fraction.Denominator);
-        }
-
         /// <summary>Preforms the multiplication operation on the given fractions</summary>
         /// <param name="A">The first value in the operation</param>
         /// <param name="B">The second value in the operation</param>
-        /// <returns></returns>
+        /// <returns>A UInt32Fraction</returns>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static UInt32Fraction Multiply(UInt32Fraction A, UInt32Fraction B) {
             return new UInt32Fraction((UInt32)(A.Numerator * B.Numerator), (UInt32)(A.Denominator * B.Denominator));
         }
 
-                /// <summary>
-        /// 
-        /// </summary>
+        /// <summary>Preforms the multiplication operation on the given fractions</summary>
         /// <param name="A">The first value in the operation</param>
         /// <param name="B">The second value in the operation</param>
-        /// <returns></returns>
+        /// <returns>A UInt32Fraction</returns>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static UInt32Fraction Multiply(UInt32Fraction A, UInt32 B) {
             return new UInt32Fraction((UInt32)(A.Numerator * B), A.Denominator);
         }
 
-        /// <summary>
-        /// 
-        /// </summary>
+        /// <summary>Preforms the addition operation on the given fractions</summary>
         /// <param name="A">The first value in the operation</param>
         /// <param name="B">The second value in the operation</param>
-        /// <returns></returns>
+        /// <returns>A UInt32Fraction</returns>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static UInt32Fraction Addition(UInt32Fraction A, UInt32Fraction B) {
             if (A.Denominator == B.Denominator) {
@@ -54,12 +42,10 @@ namespace DaanV2.Math {
             return new UInt32Fraction((UInt32)(numeratorA + numeratorB), denominator);
         }
 
-        /// <summary>
-        /// 
-        /// </summary>
+        /// <summary>Preforms the addition operation on the given fractions</summary>
         /// <param name="A">The first value in the operation</param>
         /// <param name="B">The second value in the operation</param>
-        /// <returns></returns>
+        /// <returns>A UInt32Fraction</returns>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static UInt32Fraction Addition(UInt32Fraction A, UInt32 B) {
             if (A.Denominator == 1) {
@@ -73,12 +59,10 @@ namespace DaanV2.Math {
             return new UInt32Fraction((UInt32)(numeratorA + numeratorB), denominator);
         }
 
-        /// <summary>
-        /// 
-        /// </summary>
+        /// <summary>Preforms the substract operation on the given fractions</summary>
         /// <param name="A">The first value in the operation</param>
         /// <param name="B">The second value in the operation</param>
-        /// <returns></returns>
+        /// <returns>A UInt32Fraction</returns>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static UInt32Fraction Substract(UInt32Fraction A, UInt32Fraction B) {
             if (A.Denominator == B.Denominator) {
@@ -92,16 +76,14 @@ namespace DaanV2.Math {
             return new UInt32Fraction((UInt32)(numeratorA - numeratorB), denominator);
         }
 
-        /// <summary>
-        /// 
-        /// </summary>
+        /// <summary>Preforms the substract operation on the given fractions</summary>
         /// <param name="A">The first value in the operation</param>
         /// <param name="B">The second value in the operation</param>
-        /// <returns></returns>
+        /// <returns>A UInt32Fraction</returns>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static UInt32Fraction Substract(UInt32Fraction A, UInt32 B) {
             if (A.Denominator == 1) {
-                return new UInt32Fraction((UInt32)(A.Numerator - B), A.Denominator);
+                return new UInt32Fraction((UInt32)(A.Numerator - B), 1);
             }
 
             UInt32 denominator = A.Denominator; //* 1
@@ -111,15 +93,13 @@ namespace DaanV2.Math {
             return new UInt32Fraction((UInt32)(numeratorA - numeratorB), denominator);
         }
 
-        /// <summary>
-        /// 
-        /// </summary>
+        /// <summary>Preforms the power operation on the given fraction</summary>
         /// <param name="A">The first value in the operation</param>
-        /// <param name="B">The second value in the operation</param>
-        /// <returns></returns>
+        /// <param name="power">The power to raise the fraction to</param>
+        /// <returns>A UInt32Fraction</returns>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static UInt32Fraction Inverse(UInt32Fraction A) {
-            return new UInt32Fraction(A.Denominator, A.Numerator);
+        public static UInt32Fraction Pow(UInt32Fraction A, UInt32 power) {
+            return new UInt32Fraction((UInt32)System.Math.Pow(A.Numerator, power) , (UInt32)System.Math.Pow(A.Denominator, power));
         }
     }
 }

@@ -7,40 +7,28 @@ using System.Runtime.CompilerServices;
 
 namespace DaanV2.Math {
     public static partial class Math {
-        /// <summary>Solves the fraction into a single value</summary>
-        /// <param name="Fraction"></param>
-        /// <returns>The value of the fraction</returns>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static Double Solve(DoubleFraction Fraction) {
-            return (Double)(Fraction.Numerator / Fraction.Denominator);
-        }
-
         /// <summary>Preforms the multiplication operation on the given fractions</summary>
         /// <param name="A">The first value in the operation</param>
         /// <param name="B">The second value in the operation</param>
-        /// <returns></returns>
+        /// <returns>A DoubleFraction</returns>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static DoubleFraction Multiply(DoubleFraction A, DoubleFraction B) {
             return new DoubleFraction((Double)(A.Numerator * B.Numerator), (Double)(A.Denominator * B.Denominator));
         }
 
-                /// <summary>
-        /// 
-        /// </summary>
+        /// <summary>Preforms the multiplication operation on the given fractions</summary>
         /// <param name="A">The first value in the operation</param>
         /// <param name="B">The second value in the operation</param>
-        /// <returns></returns>
+        /// <returns>A DoubleFraction</returns>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static DoubleFraction Multiply(DoubleFraction A, Double B) {
             return new DoubleFraction((Double)(A.Numerator * B), A.Denominator);
         }
 
-        /// <summary>
-        /// 
-        /// </summary>
+        /// <summary>Preforms the addition operation on the given fractions</summary>
         /// <param name="A">The first value in the operation</param>
         /// <param name="B">The second value in the operation</param>
-        /// <returns></returns>
+        /// <returns>A DoubleFraction</returns>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static DoubleFraction Addition(DoubleFraction A, DoubleFraction B) {
             if (A.Denominator == B.Denominator) {
@@ -54,12 +42,10 @@ namespace DaanV2.Math {
             return new DoubleFraction((Double)(numeratorA + numeratorB), denominator);
         }
 
-        /// <summary>
-        /// 
-        /// </summary>
+        /// <summary>Preforms the addition operation on the given fractions</summary>
         /// <param name="A">The first value in the operation</param>
         /// <param name="B">The second value in the operation</param>
-        /// <returns></returns>
+        /// <returns>A DoubleFraction</returns>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static DoubleFraction Addition(DoubleFraction A, Double B) {
             if (A.Denominator == 1) {
@@ -73,12 +59,10 @@ namespace DaanV2.Math {
             return new DoubleFraction((Double)(numeratorA + numeratorB), denominator);
         }
 
-        /// <summary>
-        /// 
-        /// </summary>
+        /// <summary>Preforms the substract operation on the given fractions</summary>
         /// <param name="A">The first value in the operation</param>
         /// <param name="B">The second value in the operation</param>
-        /// <returns></returns>
+        /// <returns>A DoubleFraction</returns>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static DoubleFraction Substract(DoubleFraction A, DoubleFraction B) {
             if (A.Denominator == B.Denominator) {
@@ -92,16 +76,14 @@ namespace DaanV2.Math {
             return new DoubleFraction((Double)(numeratorA - numeratorB), denominator);
         }
 
-        /// <summary>
-        /// 
-        /// </summary>
+        /// <summary>Preforms the substract operation on the given fractions</summary>
         /// <param name="A">The first value in the operation</param>
         /// <param name="B">The second value in the operation</param>
-        /// <returns></returns>
+        /// <returns>A DoubleFraction</returns>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static DoubleFraction Substract(DoubleFraction A, Double B) {
             if (A.Denominator == 1) {
-                return new DoubleFraction((Double)(A.Numerator - B), A.Denominator);
+                return new DoubleFraction((Double)(A.Numerator - B), 1);
             }
 
             Double denominator = A.Denominator; //* 1
@@ -111,15 +93,13 @@ namespace DaanV2.Math {
             return new DoubleFraction((Double)(numeratorA - numeratorB), denominator);
         }
 
-        /// <summary>
-        /// 
-        /// </summary>
+        /// <summary>Preforms the power operation on the given fraction</summary>
         /// <param name="A">The first value in the operation</param>
-        /// <param name="B">The second value in the operation</param>
-        /// <returns></returns>
+        /// <param name="power">The power to raise the fraction to</param>
+        /// <returns>A DoubleFraction</returns>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static DoubleFraction Inverse(DoubleFraction A) {
-            return new DoubleFraction(A.Denominator, A.Numerator);
+        public static DoubleFraction Pow(DoubleFraction A, Double power) {
+            return new DoubleFraction((Double)System.Math.Pow(A.Numerator, power) , (Double)System.Math.Pow(A.Denominator, power));
         }
     }
 }

@@ -109,14 +109,6 @@ namespace DaanV2.Math.Fractions {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static implicit operator Int16Fraction((Int16 numerator, Int16 denominator) v) {
             return new Int16Fraction(v.numerator, v.denominator);
-        }        
-
-        /// <summary>The explicit cast from <see cref="IFraction{Int16}"/> to <see cref="Int16Fraction"/></summary>
-        /// <param name="value">The object to cast</param>
-        /// <returns>A <see cref="Int16Fraction"/></returns>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static implicit operator Int16Fraction(IFraction<Int16> v) {
-            return new Int16Fraction(v.Numerator, v.Denominator);
         }
     }
 }

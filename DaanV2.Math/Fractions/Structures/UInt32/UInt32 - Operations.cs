@@ -109,14 +109,6 @@ namespace DaanV2.Math.Fractions {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static implicit operator UInt32Fraction((UInt32 numerator, UInt32 denominator) v) {
             return new UInt32Fraction(v.numerator, v.denominator);
-        }        
-
-        /// <summary>The explicit cast from <see cref="IFraction{UInt32}"/> to <see cref="UInt32Fraction"/></summary>
-        /// <param name="value">The object to cast</param>
-        /// <returns>A <see cref="UInt32Fraction"/></returns>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static implicit operator UInt32Fraction(IFraction<UInt32> v) {
-            return new UInt32Fraction(v.Numerator, v.Denominator);
         }
     }
 }
