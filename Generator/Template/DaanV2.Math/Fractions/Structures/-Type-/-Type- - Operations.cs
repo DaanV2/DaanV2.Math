@@ -109,14 +109,6 @@ namespace DaanV2.Math.Fractions {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static implicit operator %Type%Fraction((%Type% numerator, %Type% denominator) v) {
             return new %Type%Fraction(v.numerator, v.denominator);
-        }        
-
-        /// <summary>The explicit cast from <see cref="IFraction{%Type%}"/> to <see cref="%Type%Fraction"/></summary>
-        /// <param name="value">The object to cast</param>
-        /// <returns>A <see cref="%Type%Fraction"/></returns>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static implicit operator %Type%Fraction(IFraction<%Type%> v) {
-            return new %Type%Fraction(v.Numerator, v.Denominator);
         }
     }
 }

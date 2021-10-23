@@ -36,8 +36,5 @@ namespace Generator {
             Console.WriteLine("==== Done ====");
             Console.ReadLine();
         }
-
-
-
     }
 }
