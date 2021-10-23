@@ -12,8 +12,8 @@ namespace UnitTest {
             var example = new UInt32Fraction(200, 150);
             var simp = DaanV2.Math.Math.Simplfy(example);
 
-            Assert.AreEqual(example.Numerator, 4);
-            Assert.AreEqual(example.Denominator, 3);
+            Assert.AreEqual(simp.Numerator, (UInt32)4);
+            Assert.AreEqual(simp.Denominator, (UInt32)3);
         }
 
     }
